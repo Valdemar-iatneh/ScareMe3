@@ -9,13 +9,13 @@ interface Api {
 
     companion object {
         fun createApi(): Api {
-           val gson = GsonBuilder()
-               .setLenient()
-               .create()
+            val gson = GsonBuilder()
+                .setLenient()
+                .create()
             val retrofit = Retrofit.Builder()
-                .baseUrl("http://45.144.179.101/scare-me/api/mobile/v1/auth/login")
+                .baseUrl("")
                 .addCallAdapterFactory(RxJava2CallAdapterFactory.create())
-                .addConverterFactory(GsonConverterFactory.create(gson))
+                .addConverterFactory(GsonConverterFactory.create())
                 .build()
             return retrofit.create(Api::class.java)
         }
