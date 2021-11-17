@@ -1,0 +1,10 @@
+<resources>
+    <string name="app_name">ScareMe3</string>
+    <string name="sign_in_text">Sign In</string>
+    <string name="already_have_an_account_text">Already have an account?</string>
+    <string name="sign_up_text">Sign Up</string>
+    <string name="scareme_text">ScareMe</string>
+    <string name="e_mail_text">E-mail</string>
+    <string name="password_text">Password</string>
+    <string name="repeat_password_text">Repeat password</string>
+</resources>
