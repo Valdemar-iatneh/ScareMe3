@@ -1,22 +1,33 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
-    package="com.example.scareme3" >
+    package="com.example.scareme3">
 
     <uses-permission android:name="android.permission.INTERNET" />
 
     <application
+        android:name=".api.App"
         android:allowBackup="true"
+        android:usesCleartextTraffic="true"
         android:icon="@mipmap/ic_scare_me"
         android:label="@string/app_name"
         android:roundIcon="@mipmap/ic_scare_me_round"
         android:supportsRtl="true"
-        android:theme="@style/Theme.ScareMe3" >
+        android:theme="@style/Theme.ScareMe3">
+        <activity
+            android:name=".common.ProfileActivity"
+            android:exported="true" />
         <activity
             android:name=".SignInActivity"
             android:exported="true" />
         <activity
             android:name=".SignInUpActivity"
-            android:exported="true" >
+            android:exported="true"/>
+        <activity
+            android:name=".WelcomeActivity"
+            android:exported="true" />
+        <activity
+            android:name=".SplashActivity"
+            android:exported="true">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
@@ -24,15 +35,8 @@
             </intent-filter>
         </activity>
         <activity
-            android:name=".WelcomeActivity"
-            android:exported="true" />
-        <activity
-            android:name=".SplashActivity"
-            android:exported="true" />
-        <activity
             android:name=".common.MainActivity"
-            android:exported="true" >
-        </activity>
+            android:exported="true"/>
     </application>
 
 </manifest>

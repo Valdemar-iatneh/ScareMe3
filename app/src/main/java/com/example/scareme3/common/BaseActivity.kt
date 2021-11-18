@@ -9,7 +9,7 @@ open class BaseActivity : AppCompatActivity() {
         startActivity(Intent(applicationContext, classActivity))
     }
 
-    fun startActivityWithFinish(classActivity: Class<*>, affinity: Boolean) {
+    fun startActivityWithFinish(classActivity: Class<*>) {
         startActivity(Intent(applicationContext, classActivity))
 
         finish()
