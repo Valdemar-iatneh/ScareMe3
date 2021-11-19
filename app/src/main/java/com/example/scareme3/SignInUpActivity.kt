@@ -52,6 +52,7 @@ class SignInUpActivity : BaseActivity() {
                     App.dm.setPassword(binding.editPassword.text.toString())
                     startActivity(ProfileActivity::class.java)
                 }
+                println(it.code())
             }, {
                     println(it.message)
                 }

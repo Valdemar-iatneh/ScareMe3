@@ -83,6 +83,7 @@
         app:layout_constraintTop_toBottomOf="@id/cardEmail">
 
         <EditText
+            android:inputType="textPassword"
             android:id="@+id/editPassword"
             android:layout_width="match_parent"
             android:layout_height="64dp"
@@ -112,6 +113,7 @@
         app:layout_constraintTop_toBottomOf="@id/cardPassword">
 
         <EditText
+            android:inputType="textPassword"
             android:id="@+id/editRepPassword"
             android:layout_width="match_parent"
             android:layout_height="64dp"

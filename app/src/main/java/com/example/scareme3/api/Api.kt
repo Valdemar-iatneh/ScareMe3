@@ -14,11 +14,12 @@ import retrofit2.http.POST
 import java.util.*
 
 interface Api {
-    @POST("/v1/auth/register")
+    @POST("v1/auth/register")
     fun registration(@Body user: User) : Observable<Response<ResponseToken>>
 
-    @POST("/v1/auth/login")
+    @POST("v1/auth/login")
     fun autorization(@Body user: User) : Observable<Response<ResponseToken>>
+
     companion object {
         fun createApi(): Api {
             val gson = GsonBuilder()
@@ -27,7 +28,7 @@ interface Api {
             val retrofit = Retrofit.Builder()
                 .baseUrl("http://45.144.179.101/scare-me/api/mobile/")
                 .addCallAdapterFactory(RxJava2CallAdapterFactory.create())
-                .addConverterFactory(GsonConverterFactory.create())
+                .addConverterFactory(GsonConverterFactory.create(gson))
                 .build()
             return retrofit.create(Api::class.java)
         }
