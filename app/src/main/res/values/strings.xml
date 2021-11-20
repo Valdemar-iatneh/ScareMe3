@@ -8,4 +8,8 @@
     <string name="password_text">Password</string>
     <string name="repeat_password_text">Repeat password</string>
     <string name="save_text">Save</string>
+    <string name="why_are_you_scary_text">Why are you scary?</string>
+    <string name="name_text">Name</string>
+    <string name="about_text">About</string>
+    <string name="party_topics_text">Party Topics</string>
 </resources>
