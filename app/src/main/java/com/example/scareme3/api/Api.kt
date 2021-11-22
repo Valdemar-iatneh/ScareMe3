@@ -1,6 +1,7 @@
 package com.example.scareme3.api
 
 import com.example.scareme3.model.ResponseToken
+import com.example.scareme3.model.Topic
 import com.example.scareme3.model.User
 import com.google.gson.GsonBuilder
 import io.reactivex.Observable
@@ -10,6 +11,8 @@ import retrofit2.Retrofit
 import retrofit2.adapter.rxjava2.RxJava2CallAdapterFactory
 import retrofit2.converter.gson.GsonConverterFactory
 import retrofit2.http.Body
+import retrofit2.http.GET
+import retrofit2.http.Header
 import retrofit2.http.POST
 import java.util.*
 
@@ -19,6 +22,9 @@ interface Api {
 
     @POST("v1/auth/login")
     fun autorization(@Body user: User) : Observable<Response<ResponseToken>>
+
+//    @GET("v1/topic")
+//    fun getTopics(@Header accessToken: ResponseToken) : Observable<Response<Topic>>
 
     companion object {
         fun createApi(): Api {

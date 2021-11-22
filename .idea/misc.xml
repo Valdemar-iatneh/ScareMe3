@@ -12,6 +12,8 @@
         <entry key="app/src/main/res/layout/activity_sign_in_up.xml" value="0.45" />
         <entry key="app/src/main/res/layout/activity_splash.xml" value="0.5" />
         <entry key="app/src/main/res/layout/activity_welcome.xml" value="0.5" />
+        <entry key="app/src/main/res/layout/recview_item_topic.xml" value="0.45" />
+        <entry key="app/src/main/res/layout/topic_recview_item.xml" value="0.42291666666666666" />
       </map>
     </option>
   </component>
