@@ -12,4 +12,5 @@
     <string name="name_text">Name</string>
     <string name="about_text">About</string>
     <string name="party_topics_text">Party Topics</string>
+    <string name="trick_or_treat_text">Trick or Treat?</string>
 </resources>

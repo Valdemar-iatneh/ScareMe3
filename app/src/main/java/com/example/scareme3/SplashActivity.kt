@@ -36,6 +36,7 @@ class SplashActivity : BaseActivity() {
                             println(it.message)
                         }
                     )
+                startActivityWithFinish(WelcomeActivity::class.java)
             }
         },2000)
     }

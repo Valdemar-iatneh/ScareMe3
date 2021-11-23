@@ -1,11 +1,11 @@
 package com.example.scareme3.common
 
-import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import android.util.Log
 import android.view.LayoutInflater
 import androidx.recyclerview.widget.GridLayoutManager
 import androidx.recyclerview.widget.RecyclerView
-import com.example.scareme3.R
+import com.example.scareme3.adapter.TopicRecViewAdapter
 import com.example.scareme3.api.App
 import com.example.scareme3.databinding.ActivityProfileBinding
 import com.example.scareme3.model.Topic
@@ -23,7 +23,7 @@ class ProfileActivity : BaseActivity() {
         var topicRecView: RecyclerView = binding.recViewTopic
         topicRecView.layoutManager = GridLayoutManager(this, 4)
         topicRecView.itemDecorationCount
-        listTopic = ArrayList()
+        fillListTopic()
 
         binding.btnAvatar.setOnClickListener {
 
@@ -32,12 +32,14 @@ class ProfileActivity : BaseActivity() {
 
     private fun fillListTopic() {
         val disp = App.dm.api
-            .getTopics()
+            .getTopics("Bearer ${App.dm.getToken()}")
             .subscribeOn(Schedulers.io())
             .observeOn(AndroidSchedulers.mainThread())
             .subscribe({
+                Log.i("topic", it.code().toString())
                 if (it.code() == 200) {
-                    
+                    Log.i("topic", "ok")
+                    binding.recViewTopic.adapter = TopicRecViewAdapter(this, it.body()!!)
                 }
             }, {
                 println(it.message)

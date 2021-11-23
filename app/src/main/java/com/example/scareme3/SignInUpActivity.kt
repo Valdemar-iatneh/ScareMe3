@@ -2,6 +2,7 @@ package com.example.scareme3
 
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import android.util.Log
 import android.view.LayoutInflater
 import android.widget.Toast
 import com.example.scareme3.api.App
@@ -39,6 +40,7 @@ class SignInUpActivity : BaseActivity() {
             .subscribeOn(Schedulers.io())
             .observeOn(AndroidSchedulers.mainThread())
             .subscribe({
+                Log.i("code", it.code().toString())
                 if (it.code() == 400) {
                     binding.editPassword.error = "Short password"
                 }
@@ -54,6 +56,7 @@ class SignInUpActivity : BaseActivity() {
                 }
                 println(it.code())
             }, {
+                Log.i("code", it.message.toString())
                     println(it.message)
                 }
             )

@@ -10,11 +10,9 @@ import retrofit2.Response
 import retrofit2.Retrofit
 import retrofit2.adapter.rxjava2.RxJava2CallAdapterFactory
 import retrofit2.converter.gson.GsonConverterFactory
-import retrofit2.http.Body
-import retrofit2.http.GET
-import retrofit2.http.Header
-import retrofit2.http.POST
+import retrofit2.http.*
 import java.util.*
+import kotlin.collections.ArrayList
 
 interface Api {
     @POST("v1/auth/register")
@@ -23,8 +21,8 @@ interface Api {
     @POST("v1/auth/login")
     fun autorization(@Body user: User) : Observable<Response<ResponseToken>>
 
-//    @GET("v1/topic")
-//    fun getTopics(@Header accessToken: ResponseToken) : Observable<Response<Topic>>
+    @GET("v1/topic")
+    fun getTopics(@Header("Authorization") accessToken: String) : Observable<Response<ArrayList<Topic>>>
 
     companion object {
         fun createApi(): Api {
